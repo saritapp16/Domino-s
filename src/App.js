@@ -29,7 +29,7 @@ class App extends React.Component {
       newTiles.splice(indexTile, 1);
     }
 
-    let players = [...this.state.players_tiles];//.slice();
+    let players = [...this.state.players_tiles];
 
     if(players.length < 4){
 
@@ -46,6 +46,8 @@ class App extends React.Component {
 
   }
 
+
+  /* RENDER SECTION */
   renderTile(topValue, bottomValue, css_class) {
     let tile = topValue.toString().concat("-", bottomValue.toString());
     return (
@@ -59,22 +61,28 @@ class App extends React.Component {
     );
   }
 
+  renderInitialBoard() {
+    return (
+      <div>
+        <div className="App">
+          {
+            this.state.tiles.map((tile, index) =>
+            this.renderTile(this.state.tiles[index][0],
+            this.state.tiles[index][2], "TileLine"))
+          }
+          <button onClick={() => this.createPlayer()}>Create Players</button>
+        </div>
+        <div className="App">
+          HEY
+        </div>
+      </div>
+    );
+  }
+
   render(){
     if(this.state.players_tiles.length === 0){
-      return (
-        <div>
-          <div className="App">
-            {
-              this.state.tiles.map((tile, index) =>
-              this.renderTile(this.state.tiles[index][0],
-              this.state.tiles[index][2], "TileLine"))
-            }
-            <button onClick={() => this.createPlayer()}>Create Players</button>
-          </div>
-          <div className="App">
-            HEY
-          </div>
-        </div>
+      return(
+        this.renderInitialBoard()
       );
     }
     else {
@@ -90,7 +98,7 @@ class App extends React.Component {
             <button onClick={() => this.createPlayer()}> Start Game</button>
 
             {
-              players_in_game = this.state.players_tiles.map((tiles, index) =>
+                this.state.players_tiles.map((tiles, index) =>
                 this.renderPlayer("Player ".concat((index+1).toString()), tiles))
             }
           </div>
@@ -98,7 +106,7 @@ class App extends React.Component {
           {
             board.map((tile, index) =>
             this.renderTile(board[index][0],
-            board[index][2], "Tile_in_board"))
+            board[index][2], "TileLine_in_board"))
           }
           </div>
         </div>
@@ -201,6 +209,7 @@ class Player extends React.Component {
             this.state.tiles.map((tile, index) =>
             this.renderTile(tile[0], tile[2], "TileLine"))
           }
+          <button onClick={() => this.setState(state => ({turn: false}))}>Pass</button>
         </div>
       );
     }
@@ -287,6 +296,7 @@ function BottomTile(props){
                 <div key={index} className={"circle ".concat(positions[tiles.length][index])}></div>
 
               )
+
           }
       </div>
     </div>

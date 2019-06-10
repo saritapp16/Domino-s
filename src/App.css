@@ -73,6 +73,11 @@ div.TileLine {
   display: inline-block;
 }
 
+.TileLine_in_board {
+  display: block;
+  margin-left: 100px;
+}
+
 .Tile {
   width: 50px;
   height: 50px;
@@ -82,20 +87,10 @@ div.TileLine {
   background-color: white;
   margin-left: 5px;
   margin-right: 5px;
-
+  transition: 0.3s;
 }
 
-.Tile_in_board {
-  width: 50px;
-  height: 50px;
-  border-color: yellow;
-  border-style: solid;
-  background: blue;
-  border-width: 0.5px;
-  margin-left: 5px;
-  margin-right: 5px;
 
-}
 
 .TopTile {
   position: relative;
