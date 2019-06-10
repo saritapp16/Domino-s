@@ -1,5 +1,115 @@
 .App {
+  width: 450px;
+  min-height: 450px;
   text-align: center;
+  border-style: solid;
+  display: inline-block;
+}
+
+.App2 {
+  margin-top: 80%;
+}
+
+.circle {
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 50%;
+  background-color: black;
+
+}
+
+div.topleft {
+	position: absolute;
+	top: 10%;
+	left: 10%;
+}
+
+div.bottomright {
+	position: absolute;
+	top: 70%;
+	left: 70%;
+}
+
+
+div.middle {
+	position: absolute;
+	top: 40%;
+	left: 40%;
+}
+
+div.topright {
+	position: absolute;
+	top: 10%;
+	left: 70%;
+}
+
+div.bottomleft {
+	position: absolute;
+	top: 70%;
+	left: 10%;
+}
+
+div.middleleft {
+	position: absolute;
+	top: 40%;
+	left: 10%;
+}
+
+div.middleright {
+	position: absolute;
+	top: 40%;
+	left: 70%;
+}
+
+div.TileLine:hover {
+  display: inline-block;
+  background-color: #E1E1E1;
+  border-radius: 5px;
+}
+
+div.TileLine {
+  display: inline-block;
+}
+
+.Tile {
+  width: 50px;
+  height: 50px;
+  border-color: black;
+  border-style: solid;
+  border-width: 0.5px;
+  background-color: white;
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
+
+.Tile_in_board {
+  width: 50px;
+  height: 50px;
+  border-color: yellow;
+  border-style: solid;
+  background: blue;
+  border-width: 0.5px;
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
+
+.TopTile {
+  position: relative;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-top: 5px;
+}
+
+.BottomTile {
+  position: relative;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-bottom: 5px;
+
 }
 
 .App-logo {
